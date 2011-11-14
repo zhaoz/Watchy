@@ -7,8 +7,10 @@ Author: Ziling Zhao <zilingzhao@gmail.com>
 
 import os
 
+from watchy import config
 
-class Librarian(object):
+
+class Scanner(object):
     """Scan file system for files."""
 
     def __init__(self, library):
@@ -24,6 +26,7 @@ class Librarian(object):
         if not os.path.isdir(path):
             raise IOError('Given path does not exist')
 
+        self._library.root_dirs.add(path)
 
         for root, dirs, files in os.walk(path, followlinks=True):
             for f in files:
@@ -31,4 +34,4 @@ class Librarian(object):
                 self._library.add(path)
 
 
-# vim: expandtab ts=4 sw=4 :
+# vim: expandtab ts=4 sw=4 tw=80:

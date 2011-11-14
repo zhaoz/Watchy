@@ -1,12 +1,14 @@
 #!/usr/bin/python2
 
-from watchy.scanner import Librarian
-from watchy.library import MovieLibrary
+from watchy.scanner import Scanner
+from watchy.model.library import MovieLibrary
 
 
 lib = MovieLibrary()
 
-librarian = Librarian('~/Movies/Movies', lib)
+scanner = Scanner(lib)
 
-librarian.scan()
+scanner.scan('./Movies')
+
+print lib
 
