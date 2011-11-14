@@ -28,7 +28,7 @@ class Video(Media):
         # multiple parts
         self.files = []
 
-    def addFile(self, path):
+    def add_file(self, path):
         """Add a file to this video."""
         self.files.append(filetypes.WrapVideoFile(path))
 

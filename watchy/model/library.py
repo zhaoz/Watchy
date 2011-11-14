@@ -16,7 +16,7 @@ class Library(object):
         self.files = {}
         self.root_dirs = set()
 
-    def _registerDirectory(self, path):
+    def _register_directory(self, path):
         """Register directory."""
 
         if path in self.directories:
@@ -24,15 +24,15 @@ class Library(object):
 
         self.directories[path] = os.path.getmtime(path)
 
-    def _addFile(self, path):
+    def _add_file(self, path):
         """Add file to library."""
         raise NotImplementedError
 
     def add(self, path):
         """Add the directory to the collection."""
         dirname = os.path.dirname(path)
-        self._registerDirectory(dirname)
-        self._addFile(path)
+        self._register_directory(dirname)
+        self._add_file(path)
 
 
 class MovieLibrary(Library):
@@ -48,7 +48,7 @@ class MovieLibrary(Library):
         # this will map movie names to movies
         self.movies = {}
 
-    def _addFile(self, path):
+    def _add_file(self, path):
         dir_path = os.path.dirname(path)
         movie_name = os.path.basename(dir_path)
 
@@ -58,7 +58,7 @@ class MovieLibrary(Library):
             movie = types.Movie(movie_name)
             self.movies[movie_name] = movie
 
-        movie.addFile(path)
+        movie.add_file(path)
 
     def __str__(self):
         return '\n'.join(str(m) for m in self.movies.itervalues())
