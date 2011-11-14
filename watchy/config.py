@@ -61,4 +61,4 @@ _config = _ConfigLoader(config)
 _config.load()
 
 
-# vim: expandtab ts=4 sw=4 tw=80:
+# vim: expandtab ts=4 sw=4 tw=79:

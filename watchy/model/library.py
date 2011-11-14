@@ -64,4 +64,4 @@ class MovieLibrary(Library):
         return '\n'.join(str(m) for m in self.movies.itervalues())
 
 
-# vim: expandtab ts=4 sw=4 tw=80:
+# vim: expandtab ts=4 sw=4 tw=79:

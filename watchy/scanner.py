@@ -32,4 +32,4 @@ class Scanner(object):
                 self._library.add(path)
 
 
-# vim: expandtab ts=4 sw=4 tw=80:
+# vim: expandtab ts=4 sw=4 tw=79:
