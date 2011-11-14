@@ -2,7 +2,13 @@
 from collections import MutableMapping
 import os
 
-class Config(MutableMapping):
+class _Config(MutableMapping):
+    """Config holder.
+
+    A Config class that emulates a dict for use in loading, config items are
+    accessible via standard getattr type access for ease of use.
+
+    """
     def __init__(self):
         self._dict = {}
 
@@ -25,10 +31,11 @@ class Config(MutableMapping):
         return self._dict[key]
 
 
-config = Config()
-
-
 class _ConfigLoader(object):
+    """Config loader.
+
+    Takes python config files, and updates a _Config object.
+    """
 
     DEFAULT_CONFIGS = ['/etc/watchy', '~/.config/watchy']
 
@@ -45,5 +52,6 @@ class _ConfigLoader(object):
                 execfile(f, globals(), self._config)
 
 
+config = _Config()
 _config = _ConfigLoader(config)
 _config.load()
