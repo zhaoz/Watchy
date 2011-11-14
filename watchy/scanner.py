@@ -7,8 +7,6 @@ Author: Ziling Zhao <zilingzhao@gmail.com>
 
 import os
 
-from watchy import config
-
 
 class Scanner(object):
     """Scan file system for files."""

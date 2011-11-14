@@ -1,4 +1,7 @@
-"""Wrappers around files."""
+"""Wrappers around files.
+
+Author: Ziling Zhao <zilingzhao@gmail.com>
+"""
 
 import mimetypes
 
@@ -51,11 +54,6 @@ def WrapVideoFile(path):
                 'File "{0}" cannot be handled.'.format(path))
 
     return cls(path)
-
-
-
-
-            
 
 
 # vim: expandtab ts=4 sw=4 tw=80:

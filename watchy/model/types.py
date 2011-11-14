@@ -1,4 +1,7 @@
-"""Model."""
+"""Model.
+
+Author: Ziling Zhao <zilingzhao@gmail.com>
+"""
 
 from watchy import filetypes
 

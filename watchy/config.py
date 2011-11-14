@@ -1,4 +1,8 @@
-"""Configuration stuff."""
+"""Configuration stuff.
+
+Author: Ziling Zhao <zilingzhao@gmail.com>
+"""
+
 from collections import MutableMapping
 import os
 
@@ -55,3 +59,6 @@ class _ConfigLoader(object):
 config = _Config()
 _config = _ConfigLoader(config)
 _config.load()
+
+
+# vim: expandtab ts=4 sw=4 tw=80:

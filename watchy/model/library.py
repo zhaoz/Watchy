@@ -1,4 +1,7 @@
-"""Library."""
+"""Library.
+
+Author: Ziling Zhao <zilingzhao@gmail.com>
+"""
 
 import os
 
